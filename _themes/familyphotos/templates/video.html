@@ -1,0 +1,29 @@
+<h1>{{ title }} </h1>
+<ul class="grid-nav">
+{{ if prev }}
+<li><a href="{{ prev }}">Previous Set</a></li>
+{{ endif }}
+<li><a href=" {{ _site_url }}">Home</a></li>
+{{ if next }}
+<li><a href="{{ next }}">Next Set</a></li>
+{{ endif }}
+</ul>
+<p>{{ content }}</p>
+</div>
+
+ {{ get_files in="assets/video/{{ gall }}" extension="mp4" }}
+
+<video id="{{ filename }}" class="video-js vjs-default-skin"
+  controls preload="auto" width="640" height="360"
+  poster="{{ _site_url }}/assets/video/{{ gall }}/{{ thumb }}" >
+ <source src="{{ _site_url }}/assets/video/{{ gall }}/{{ filename }}.mp4" type='video/mp4' />
+ <source src="{{ _site_url }}/assets/video/{{ gall }}/{{ filename }}.ogv" type='video/ogv' />
+</video>
+
+<script>
+videojs("{{ filename }}", {}, function(){
+  // Player (this) is initialized and ready.
+});
+</script>
+
+{{ /get_files }}

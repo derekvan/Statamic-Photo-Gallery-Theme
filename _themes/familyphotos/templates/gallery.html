@@ -1,0 +1,28 @@
+<h1>{{ title }} </h1>
+<ul class="grid-nav">
+{{ if prev }}
+<li><a href="{{ prev }}">Previous Set</a></li>
+{{ endif }}
+<li><a href=" {{ _site_url }}">Home</a></li>
+{{ if next }}
+<li><a href="{{ next }}">Next Set</a></li>
+{{ endif }}
+</ul>
+<p>{{ content }}</p>
+
+<div class="wrap">
+    
+    <!-- Define all of the tiles: -->
+    <div class="popup-gallery">
+     {{ get_files in="assets/img/{{ gall }}" sort_by="numeric" sort_dir="asc" }}
+    <div class="box">
+    <div class="boxInner">
+       <a href="{{ file }}">
+            <img src="{{ transform src="{{ file }}" height="460" width="460" quality="95" ratio="no" action="smart" }}">
+        </a>
+    </div>
+    </div>
+    {{ /get_files }}  
+    </div>
+  </div>
+  <!-- /#wrap -->

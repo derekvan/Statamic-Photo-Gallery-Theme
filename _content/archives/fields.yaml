@@ -1,0 +1,14 @@
+title: Archives
+fieldset: post
+type: date
+
+fields:
+  _template: 
+    display: Template
+    type: templates
+
+  title:
+    display: Gallery Title
+
+  archive_year:
+    display: Year

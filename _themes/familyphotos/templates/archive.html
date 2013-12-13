@@ -1,0 +1,46 @@
+<div class="wrapper">
+	<div class="container">
+		<h1>Family Photos - {{ archive_year }}</h1>
+		<ul class="grid-nav">
+		<li><a href="{{ _site_url }}">Home</a></li>
+		</ul>
+		<hr />
+		
+		<div id="two-columns" class="grid-container" style="display:block;">
+			<ul class="rig columns-2">
+				{{ entries:listing folder="galleries*" sort_dir="desc" limit="10" since="January 1st, { archive_year }" until="December 31, { archive_year }" }}
+				{{ if filename }}
+				<li>
+					<a href="{{ permalink }}">
+						<img src="{{ transform src="/assets/video/{{ gall }}/{{ thumb }}" width="767" action="smart" }}" />
+					</a>
+					<h3>{{ title }}</h3>
+					<p>{{ content }}</p>
+				</li>
+				{{ else }}
+				<li>
+					<a href="{{ permalink }}">
+						<img src="{{ transform src="/assets/img/{{ gall }}/{{ thumb }}" width="767" quality="95" action="smart" }}" />
+					</a>
+					<h3>{{ title }}</h3>
+					<p>{{ content }}</p>
+				</li>
+				{{ endif }}
+				{{ /entries:listing }}
+			</ul>
+		</div>
+		<!--/#two-columns-->
+		<ul class="grid-nav">
+		{{ entries:pagination folder="galleries*" limit="10" since="January 1st, { archive_year }" until="December 31, { archive_year }" }}
+{{ if previous_page }}
+    <li><a href="{{ previous_page }}">Previous Page</a></li>
+  {{ endif }}
+  {{ if next_page }}
+   <li><a href="{{ next_page }}">Next Page</a></li>
+  {{ endif }}
+{{ /entries:pagination }}
+</ul>
+	</div>
+	<!--/.container-->
+</div>
+<!--/.wrapper-->

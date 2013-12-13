@@ -1,0 +1,23 @@
+title: Gallery Page
+fieldset: post
+type: date
+
+fields:
+  _template: 
+    display: Template
+    type: templates
+
+  title:
+    display: Gallery Title
+
+  gall:
+    display: Gallery Folder
+
+  thumb:
+    display: Thumbnail name
+
+  description:
+    display: Thumbnail description
+
+  filename:
+    display: what is the name without extension?
