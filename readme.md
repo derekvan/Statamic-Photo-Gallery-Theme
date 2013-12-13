@@ -36,6 +36,8 @@ If you're a web designer and are interested in this concept, I'd love to hear su
 3. Make sure the `gall:` YAML variable points to the same date as the image gallery folder
 4. Choose one of the images in the gallery as the thumb and enter into the `thumb:` YAML variable
 
+**FYI**: If your gallery has a lot of images, the first time you load the page it may hang and give you a slim application error. Just reload the page again (or a few more times) and it will eventually work (it's just trying to process all the images). This will only happen once, after that, it loads the images from cache. I'm on a shared plan on Dreamhost, so this may just be my problem. I got some advice about adjusting PHP settings, but it's over my head and I haven't had time to look into it.
+
 ### For video
 
 *At this point, only one video per page*
